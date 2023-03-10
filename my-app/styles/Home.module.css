@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway&display=swap");
+
+.heading {
+  font-family: "Raleway", sans-serif;
+}
+
+@media screen and (min-width: 1440px) {
+  .registerClass {
+    color: black;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+  .registerClass:hover {
+    color: darkgray;
+    transition-timing-function: ease-in;
+    transition-duration: 300ms;
+  }
+
+  .leftPhoto {
+    width: 60%;
+  }
+
+  .loginPage {
+    width: 40%;
+  }
+
+  .loginButton {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 25%;
+  }
+
+  .searchTab {
+    width: 20%;
+  }
+
+  .filterTab {
+    width: 30%;
+  }
+
+  .CreateUserTab {
+    width: 10%;
+  }
+
+  .card {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .medUserCard {
+    display: none;
+  }
+
+  .pieChartContainer {
+    width: 25%;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .analyticsTab {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1440px) {
+  .loginButton {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 85%;
+  }
+
+  .medUserCard {
+    display: none;
+  }
+
+  .pieChartContainer {
+    width: 25%;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .analyticsTab {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .leftPhoto {
+    display: none;
+  }
+
+  .loginPage {
+    width: 100%;
+  }
+
+  .loginButton {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+
+  .searchTab {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .filterTab {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .CreateUserTab {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: space-evenly;
+  }
+
+  .userSpace {
+    display: none;
+  }
+
+  .userCard {
+    width: 100%;
+    text-align: start;
+  }
+
+  .wideUserCard {
+    display: none;
+  }
+
+  .pieChartContainer {
+    width: 100%;
+  }
+
+  .analyticsTab {
+    flex-direction: column;
+  }
+}
