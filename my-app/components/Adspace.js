@@ -3,6 +3,7 @@ import AdCard from "./AdCard";
 import styles from "../styles/Home.module.css";
 import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
+import { BASE_URL } from "@/pages/helper";
 
 const Adspace = ({ selectedCard }) => {
   const [ads, setAds] = useState([]);
@@ -11,9 +12,7 @@ const Adspace = ({ selectedCard }) => {
   const getData = async () => {
     setIsLoading(true);
     // console.log("selectedCard", selectedCard);
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/ad/${selectedCard.id}`
-    );
+    const res = await axios.get(`${BASE_URL}/ad/${selectedCard.id}`);
     setAds(res.data);
     // console.log("res.data", res.data);
     // console.log(process.env.SERVER_URL);

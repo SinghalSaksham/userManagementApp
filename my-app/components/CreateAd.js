@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
 import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
+import { BASE_URL } from "@/pages/helper";
 
 const CreateAd = ({ setShowCreateAd, selectedCard }) => {
   const [website, setWebsite] = useState("");
@@ -54,7 +55,7 @@ const CreateAd = ({ setShowCreateAd, selectedCard }) => {
     setIsLoading(true);
 
     await axios
-      .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/ad/`, {
+      .post(`${BASE_URL}/ad/`, {
         website,
         AdRevenueDollars: adRevenue,
         AdImpressions: adImpression,

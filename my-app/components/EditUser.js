@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
+import { BASE_URL } from "@/pages/helper";
 
 const EditUser = ({ selectedCard, setEditCardUser }) => {
   const path = selectedCard?.isActive
@@ -55,7 +56,7 @@ const EditUser = ({ selectedCard, setEditCardUser }) => {
     setIsLoading(true);
 
     await axios
-      .put(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/edit`, {
+      .put(`${BASE_URL}/user/edit`, {
         name: username,
         company,
         revenuePercent: revenue,

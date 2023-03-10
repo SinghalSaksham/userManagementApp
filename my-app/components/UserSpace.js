@@ -3,6 +3,7 @@ import UserCard from "./UserCard";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
+import { BASE_URL } from "@/pages/helper";
 
 const UserSpace = ({
   searchInput,
@@ -93,7 +94,7 @@ const UserSpace = ({
   const getData = async () => {
     setIsLoading(true);
 
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/`);
+    const res = await axios.get(`${BASE_URL}/user/`);
     setUsers(res.data);
 
     const storedInfo = JSON.parse(sessionStorage.getItem("user"));

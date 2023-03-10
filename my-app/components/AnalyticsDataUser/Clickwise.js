@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import PieChart from "../Charts/PieChart.js";
 import styles from "../../styles/Home.module.css";
+import { BASE_URL } from "@/pages/helper.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -14,7 +15,7 @@ const Clickwise = () => {
     const id = userInfo.id;
 
     const fetchData = async () => {
-      const url = `${process.env.NEXT_PUBLIC_SERVER_URL}/ad/${id}`;
+      const url = `${BASE_URL}/ad/${id}`;
       let dataset = [],
         labelset = [];
       await fetch(url)

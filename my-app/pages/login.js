@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import OTPPage from "../components/OTPPage";
+import { BASE_URL } from "./helper";
 
 const Login = () => {
   const emailRef = useRef();
@@ -52,7 +53,7 @@ const Login = () => {
     setIsLoading(true);
 
     await axios
-      .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/login`, {
+      .post(`${BASE_URL}/user/login`, {
         email: emailVal,
         password: passwordVal,
       })

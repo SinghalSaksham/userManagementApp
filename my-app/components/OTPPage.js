@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "@/styles/Home.module.css";
 import axios from "axios";
+import { BASE_URL } from "@/pages/helper";
 
 const OTPPage = ({ setOtpPage, setIsLoading }) => {
   const [emailVal, setEmailVal] = useState("");
@@ -48,7 +49,7 @@ const OTPPage = ({ setOtpPage, setIsLoading }) => {
     let failed = false;
 
     await axios
-      .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/checkEmail`, {
+      .post(`${BASE_URL}/user/checkEmail`, {
         email: emailVal,
       })
       .then((res) => {
@@ -66,7 +67,7 @@ const OTPPage = ({ setOtpPage, setIsLoading }) => {
     if (failed) return;
     // console.log("DOOOOOOOOON");
     await axios
-      .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/otp`, {
+      .post(`${BASE_URL}/user/otp`, {
         email: emailVal,
       })
       .then((res) => {
@@ -111,7 +112,7 @@ const OTPPage = ({ setOtpPage, setIsLoading }) => {
     let user;
 
     await axios
-      .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/verify`, {
+      .post(`${BASE_URL}/user/verify`, {
         email: emailVal,
         otp: otpVal,
       })
@@ -132,7 +133,7 @@ const OTPPage = ({ setOtpPage, setIsLoading }) => {
         }
 
         axios
-          .put(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/`, {
+          .put(`${BASE_URL}/user/`, {
             email: user.email,
             password: passwordVal,
           })

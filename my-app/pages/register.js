@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
+import { BASE_URL } from "./helper";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -51,7 +52,7 @@ const Register = () => {
     setIsLoading(true);
 
     await axios
-      .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/`, {
+      .post(`${BASE_URL}/user/`, {
         email,
         password,
         name: username,
@@ -65,7 +66,7 @@ const Register = () => {
       })
       .catch((error) => {
         axios
-          .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/checkEmail`, {
+          .post(`${BASE_URL}/user/checkEmail`, {
             email,
           })
           .then((res) => {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
 import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
+import { BASE_URL } from "@/pages/helper";
 
 const CreateUser = ({ setCreateUser }) => {
   const [username, setUsername] = useState("");
@@ -37,14 +38,14 @@ const CreateUser = ({ setCreateUser }) => {
       return;
     }
     setIsLoading(true);
-    const url = `${process.env.NEXT_PUBLIC_SERVER_URL}/user/`;
+    const url = `${BASE_URL}/user/`;
     const password = "abc123";
     // console.log("username", username);
     // console.log("email", email);
     // console.log("revenue", revenue);
     // console.log("company", company);
     await axios
-      .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/`, {
+      .post(`${BASE_URL}/user/`, {
         email,
         password,
         name: username,
@@ -59,7 +60,7 @@ const CreateUser = ({ setCreateUser }) => {
       })
       .catch((error) => {
         axios
-          .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/checkEmail`, {
+          .post(`${BASE_URL}/user/checkEmail`, {
             email,
           })
           .then((res) => {

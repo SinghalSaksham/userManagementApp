@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import PieChart from "../Charts/PieChart.js";
 import styles from "../../styles/Home.module.css";
+import { BASE_URL } from "@/pages/helper.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -11,7 +12,7 @@ const Websitewise = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = `${process.env.NEXT_PUBLIC_SERVER_URL}/user/`;
+      const url = `${BASE_URL}/user/`;
       let dataset = [],
         labelset = [];
       await fetch(url)
@@ -21,7 +22,7 @@ const Websitewise = () => {
         })
         .then((res) => {
           res.forEach((item) => {
-            const url1 = `${process.env.NEXT_PUBLIC_SERVER_URL}/ad/${item._id}`;
+            const url1 = `${BASE_URL}/ad/${item._id}`;
             // console.log("item", item.name);
             fetch(url1)
               .then((data) => {

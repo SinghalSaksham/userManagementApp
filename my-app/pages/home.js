@@ -6,6 +6,7 @@ import UserTab from "@/components/UserTab.js";
 import AnalyticsTab from "@/components/AnalyticsTab.js";
 import UserHome from "@/components/UserHome.js";
 import AnalyticsTabUser from "@/components/AnalyticsTabUser.js";
+import { BASE_URL } from "./helper.js";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +34,7 @@ const Home = () => {
     // }
 
     await axios
-      .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/isUserValid`, {
+      .post(`${BASE_URL}/user/isUserValid`, {
         token: user?.token,
       })
       .then((res) => {

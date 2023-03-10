@@ -4,6 +4,7 @@ import { CircularProgress } from "@material-ui/core";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import styles from "../styles/Home.module.css";
 import Websitewise from "./AnalyticsData/Websitewise.js";
+import { BASE_URL } from "@/pages/helper.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
