@@ -34,6 +34,7 @@ Install dependencies
   npm install
 ```
 
+Go to pages/helper.s and change BASE_URL to `http://localhost:${YOUR_SERVER_PORT}`
 Start the server
 
 ```bash
